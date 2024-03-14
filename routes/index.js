@@ -20,6 +20,8 @@ router.get("/messages/sync", async function(req, res) {
   try {
     const allMessages = await MessageModel.find({});
     
+     // Mark messages as seen by the receiver
+     await MessageModel.updateMany({ received: true }, { seenByReceiver: true });
     res.status(200).send(allMessages);
   } catch (error) {
     res.status(500).send(error);
