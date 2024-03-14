@@ -6,6 +6,6 @@ const MessageSchema=new mongoose.Schema({
     message:String,
     name:String,
     timeStamp:{type:String,default:new Date().toUTCString()},
-    recieved:Boolean,
+    recieved:{type:Boolean,default:true,},
 })
 module.exports=mongoose.model("Message",MessageSchema)
