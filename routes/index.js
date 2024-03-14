@@ -3,9 +3,9 @@ var router = express.Router();
 var MessageModel=require("./Message")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 router.post("/messages/new", async function(req, res) {
   try {
     const dbMessage = req.body;
